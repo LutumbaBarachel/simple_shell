@@ -98,12 +98,12 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 /* Builtins */
 int (*get_builtin(char *command))(char **args, char **front);
 int shellie_exit(char **args, char **front);
-int shellie_env(char **args, char **front);
-int shellie_setenv(char **args, char **front);
-int shellie_unsetenv(char **args, char **front);
-int shellie_cd(char **args, char **front);
-int shellie_alias(char **args, char **front);
-int shellie_help(char **args, char **front);
+int shellie_env(char **args, char _attribute((_unused_)) **front);
+int shellie_setenv(char **args, char _attribute((_unused_)) **front);
+int shellie_unsetenv(char **args, char _attribute((_unused_)) **front);
+int shellie_cd(char **args, char _attribute((_unused_) **front);
+int shellie_alias(char **args, char _attribute((_unused_) **front);
+int shellie_help(char **args, char _attribute((_unused_) **front);
 
 /* Builtin Helpers */
 char **_copy_env(void);
