@@ -92,4 +92,3 @@ ptr[t] = NULL;
 ptr[t + 1] = NULL;
 return (ptr);
 }
-Footer
