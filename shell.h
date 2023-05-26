@@ -18,10 +18,10 @@
 extern char **environ;
 
 /* Global Program Name */
-extern char *name;
+char *name;
 
 /* Global History Counter */
-extern int hist;
+int hist;
 
 /**
  * struct lists_s - A new struct type defining a linked list.
@@ -31,8 +31,8 @@ extern int hist;
 
 typedef struct lists_s
 {
-    char *dir;
-    struct lists_s *next;
+char *dir;
+struct lists_s *next;
 } lists_t;
 
 /**
@@ -43,8 +43,8 @@ typedef struct lists_s
 
 typedef struct builtins_s
 {
-    char *name;
-    int (*f)(char **argv, char **front);
+char *name;
+int (*f)(char **argv, char **front);
 } builtins_t;
 
 /**
@@ -56,13 +56,13 @@ typedef struct builtins_s
 
 typedef struct aliases_s
 {
-    char *name;
-    char *value;
-    struct aliases_s *next;
+char *name;
+char *value;
+struct aliases_s *next;
 } aliases_t;
 
 /* Global aliases linked list */
-extern aliases_t *aliases;
+aliases_t *aliases;
 
 /* Main Helpers */
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
@@ -98,12 +98,12 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 /* Builtins */
 int (*get_builtin(char *command))(char **args, char **front);
 int shellie_exit(char **args, char **front);
-int shellie_env(char **args, char __attribute__((__unused__)) **front);
-int shellie_setenv(char **args, char __attribute__((__unused__)) **front);
-int shellie_unsetenv(char **args, char __attribute__((__unused__)) **front);
-int shellie_cd(char **args, char __attribute__((__unused__)) **front);
-int shellie_alias(char **args, char __attribute__((__unused__)) **front);
-int shellie_help(char **args, char __attribute__((__unused__)) **front);
+int shellie_env(char **args, char _attribute((__unused_)) **front);
+int shellie_setenv(char **args, char _attribute((__unused_)) **front);
+int shellie_unsetenv(char **args, char _attribute((__unused_)) **front);
+int shellie_cd(char **args, char _attribute((__unused_)) **front);
+int shellie_alias(char **args, char _attribute((__unused_)) **front);
+int shellie_help(char **args, char _attribute((__unused_)) **front);
 
 /* Builtin Helpers */
 char **_copy_env(void);
@@ -139,4 +139,3 @@ void help_history(void);
 int proc_file_commands(char *file_path, int *exe_ret);
 
 #endif /* SHELL_H */
-
